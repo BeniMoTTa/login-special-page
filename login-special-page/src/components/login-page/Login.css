@@ -2,12 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   background-color: #c9d6ff;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background-image: url("https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: soft-light;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,9 +19,40 @@ body {
   height: 100vh;
 }
 
+.input-container {
+  position: relative;
+  padding-top: 15px;
+  background: transparent;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.input-container input {
+  border: none;
+  border-bottom: 2px solid #555;
+  background: transparent;
+  width: 100%;
+  padding: 5px 0px 5px 5px;
+  font-size: 15px;
+  color: black;
+}
+.input-container input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #db4a39;
+}
+.input-container input::-webkit-outer-spin-button,
+.input-container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-container input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .container {
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
@@ -46,6 +81,7 @@ body {
 
 .container button {
   background-color: #512da8;
+  background: linear-gradient(to right, #512da8, #77a1f5);
   color: #fff;
   font-size: 12px;
   padding: 10px 45px;
@@ -57,7 +93,15 @@ body {
   margin-top: 10px;
   cursor: pointer;
 }
-
+.forget-btn {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-right: 12px;
+}
+.forget-btn:hover {
+  text-decoration: underline;
+}
 .container button.hidden {
   background-color: transparent;
   border-color: #fff;
@@ -73,17 +117,6 @@ body {
   height: 100%;
 }
 
-.container input {
-  background-color: #eee;
-  border: none;
-  margin: 8px 0;
-  padding: 10px 15px;
-  font-size: 13px;
-  border-radius: 8px;
-  width: 100%;
-  outline: none;
-}
-
 .form-container {
   position: absolute;
   top: 0;
@@ -96,7 +129,10 @@ body {
   width: 50%;
   z-index: 2;
 }
-
+.title-basic {
+  font-size: 40px;
+  font-weight: 800;
+}
 .container.active .sign-in {
   transform: translateX(100%);
 }
@@ -128,21 +164,6 @@ body {
   }
 }
 
-.social-icons {
-  margin: 20px 0;
-}
-
-.social-icons a {
-  border: 1px solid #ccc;
-  border-radius: 20%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 3px;
-  width: 40px;
-  height: 40px;
-}
-
 .toggle-container {
   position: absolute;
   top: 0;
@@ -151,19 +172,21 @@ body {
   height: 100%;
   overflow: hidden;
   transition: all 0.6s ease-in-out;
-  border-radius: 150px 0 0 100px;
+  border-radius: 0 0 0 150px;
   z-index: 1000;
 }
 
 .container.active .toggle-container {
   transform: translateX(-100%);
-  border-radius: 0 150px 100px 0;
+  border-radius: 0 150px 0 0;
 }
 
 .toggle {
   background-color: #512da8;
   height: 100%;
-  background: linear-gradient(to right, #5c6bc0, #512da8);
+  background-image: url("https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg");
+  background-position: center;
+  background-size: cover;
   color: #fff;
   position: relative;
   left: -100%;
@@ -185,11 +208,16 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 0 30px;
   text-align: center;
   top: 0;
   transform: translateX(0);
   transition: all 0.6s ease-in-out;
+}
+
+.toggle-panel p {
+  font-weight: 500;
 }
 
 .toggle-left {
@@ -207,4 +235,68 @@ body {
 
 .container.active .toggle-right {
   transform: translateX(200%);
+}
+.space-icon {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.gmail-icon {
+  display: flex;
+  justify-content: space-between;
+  background-color: #db4a39;
+  height: 35px;
+  align-items: center;
+  width: 280px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.gmail-icon span {
+  width: 15%;
+  border-right: #333 solid 0.1px;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+.gmail-icon p {
+  width: 85%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.facebook-icon {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3b5998;
+  height: 35px;
+  align-items: center;
+  width: 280px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.facebook-icon span {
+  width: 15%;
+  border-right: #333 solid 0.1px;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+.facebook-icon p {
+  width: 85%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
 }

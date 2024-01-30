@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { SiGmail } from "react-icons/si";
+import { FaFacebook } from "react-icons/fa";
 import "./Login.css";
 
 const Login = () => {
@@ -31,56 +33,93 @@ const Login = () => {
     >
       <div className="form-container sign-up">
         <form onSubmit={handleRegister}>
-          <h1>Create Account</h1>
-          <div className="social-icons">
-            <a href="#" className="icon">
-              <i className="fa-brands fa-google-plus-g"></i>
-            </a>
-            <a href="#" className="icon">
-              <i className="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="#" className="icon">
-              <i className="fa-brands fa-github"></i>
-            </a>
-            <a href="#" className="icon">
-              <i className="fa-brands fa-linkedin-in"></i>
-            </a>
+          <h1 className="title-basic">New Account</h1>
+          <div className="space-icon">
+            <div className="gmail-icon">
+              <span>
+                <SiGmail />
+              </span>
+              <p>Connect with gmail</p>
+            </div>
+            <div className="facebook-icon">
+              <span>
+                <FaFacebook />
+              </span>
+              <p>Connect with facebook</p>
+            </div>
           </div>
-          <span>or use your email for registeration</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <span>or registrate with your datas</span>
+          <div className="input-container">
+            <input
+              id="name"
+              type="text"
+              placeholder="type your name..."
+              pattern="[0-9]*"
+            />
+          </div>
+          <div className="input-container">
+            <input
+              id="email"
+              type="email"
+              placeholder="type your email..."
+              pattern="[0-9]*"
+            />
+          </div>
+          <div className="input-container">
+            <input
+              id="password"
+              type="password"
+              placeholder="type your password..."
+              pattern="[0-9]*"
+            />
+          </div>
+
           <button>Sign Up</button>
         </form>
       </div>
       <div className="form-container sign-in">
         <form onSubmit={handleLogin}>
-          <h1>Sign In</h1>
-          <div className="social-icons">
-            <a href="#" className="icon">
-              <i className="fa-brands fa-google-plus-g"></i>
-            </a>
-            <a href="#" className="icon">
-              <i className="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="#" className="icon">
-              <i className="fa-brands fa-github"></i>
-            </a>
-            <a href="#" className="icon">
-              <i className="fa-brands fa-linkedin-in"></i>
-            </a>
+          <h1 className="title-basic">Sign In</h1>
+          <div className="space-icon">
+            <div className="gmail-icon">
+              <span>
+                <SiGmail />
+              </span>
+              <p>Connect with gmail</p>
+            </div>
+            <div className="facebook-icon">
+              <span>
+                <FaFacebook />
+              </span>
+              <p>Connect with facebook</p>
+            </div>
           </div>
           <span>or use your email password</span>
-          <input
-            type="email"
-            placeholder="Email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forget Your Password?</a>
-          <button className="hidden" id="login" onClick={handleToggleSignIn}>
+
+          <div className="input-container">
+            <input
+              id="email"
+              value={email}
+              type="email"
+              placeholder="enter with your email.."
+              onChange={(e) => setEmail(e.target.value)}
+              pattern="[0-9]*"
+            />
+          </div>
+
+          <div className="input-container">
+            <input
+              id="password"
+              type="password"
+              placeholder="enter with your password..."
+              pattern="[0-9]*"
+            />
+          </div>
+
+          <a href="#" className="forget-btn">
+            Forget Your Password?
+          </a>
+          <button id="login" onClick={handleToggleSignIn}>
             Sign In
           </button>
         </form>
@@ -89,7 +128,10 @@ const Login = () => {
         <div className="toggle">
           <div className="toggle-panel toggle-left">
             <h1>Welcome Back!</h1>
-            <p>Enter your personal details to use all of site features</p>
+            <p>
+              Do you already have an account with us? Log in to your account to
+              access our site.
+            </p>
             <button
               className={`hidden ${isRegisterActive ? "active" : ""}`}
               id="login"
@@ -99,10 +141,8 @@ const Login = () => {
             </button>
           </div>
           <div className="toggle-panel toggle-right">
-            <h1>Hello, Friend!</h1>
-            <p>
-              Register with your personal details to use all of site features
-            </p>
+            <h1>Hello, Stranger!</h1>
+            <p>Register your data with us to gain access to our dishes</p>
             <button
               className={`hidden ${isRegisterActive ? "active" : ""}`}
               id="register"
