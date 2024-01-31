@@ -1,7 +1,7 @@
 import "./AboutUs.css";
 
 const AboutUs = () => (
-  <div className="about-container">
+  <div className="about-container" id="schedule">
     <div className="title-about">
       <h3>SCHEDULE</h3>
       <h5>our Restaurant</h5>
