@@ -1,18 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-
-body {
+.general-container {
   background-color: #c9d6ff;
   background-image: url("https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-position: center;
   background-size: cover;
   background-blend-mode: soft-light;
-
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;

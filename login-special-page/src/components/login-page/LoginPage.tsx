@@ -1,11 +1,7 @@
 import Login from "./Login";
 
 const LoginPage = () => {
-  return (
-    <div className="container">
-      <Login />
-    </div>
-  );
+  return <Login />;
 };
 
 export default LoginPage;

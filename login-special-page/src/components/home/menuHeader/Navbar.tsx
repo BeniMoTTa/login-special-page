@@ -1,7 +1,8 @@
 import React from "react";
+import { IoRestaurant } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import images from "../../../hooks/images";
+
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -9,7 +10,9 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.gericht} alt="app__logo" />
+        <h2>
+          <span>J</span>ohn<span>R</span>estaurants
+        </h2>
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans">
@@ -29,12 +32,8 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">
-          Log In / Registration
-        </a>
-        <div />
-        <a href="/" className="p__opensans">
-          Book Table
+        <a href="/home" className="p__opensans">
+          <IoRestaurant />
         </a>
       </div>
       <div className="app__navbar-smallscreen">

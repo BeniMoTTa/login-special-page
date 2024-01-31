@@ -9,15 +9,16 @@ import "./Gallery.css";
 import SubHeading from "../sectionSub/SubHeading";
 
 const Gallery = () => {
-  const scrollRef = React.useRef(null);
+  const scrollRef = React.useRef<HTMLDivElement>(null);
 
   const scroll = (direction: string) => {
-    const { current } = scrollRef;
+    const container = scrollRef.current;
 
-    if (direction === "left") {
-      current.scrollLeft -= 300;
-    } else {
-      current.scrollLeft += 300;
+    if (container) {
+      container.scrollTo({
+        left: container.scrollLeft + (direction === "left" ? -300 : 300),
+        behavior: "smooth",
+      });
     }
   };
 
