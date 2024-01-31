@@ -1,10 +1,10 @@
-import LoginPage from "./components/login-page/LoginPage";
+import RoutesMain from "./routes";
 
 function App() {
   return (
-    <div>
-      <LoginPage />
-    </div>
+    <>
+      <RoutesMain />
+    </>
   );
 }
 
