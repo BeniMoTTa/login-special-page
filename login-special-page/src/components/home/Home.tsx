@@ -9,6 +9,7 @@ import Laurels from "./Laurels/Laurels";
 import Gallery from "./Gallery/Gallery";
 import FindUs from "./Findus/FindUs";
 import Clients from "./Chef/Clients";
+import Footer from "./Footer/Footer";
 const Home = () => {
   return (
     <div>
@@ -21,6 +22,7 @@ const Home = () => {
       <Intro />
       <Laurels />
       <FindUs />
+      <Footer />
     </div>
   );
 };

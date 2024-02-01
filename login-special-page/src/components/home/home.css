@@ -85,7 +85,7 @@
 
 .p__cormorant {
   font-family: var(--font-base);
-  color: var(--color-white);
+  color: var(--color-crimson);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: capitalize;
@@ -99,7 +99,6 @@
   color: var(--color-white);
   font-weight: 400;
   letter-spacing: 0.2em;
-
   line-height: 28px;
   font-size: 16px;
 }

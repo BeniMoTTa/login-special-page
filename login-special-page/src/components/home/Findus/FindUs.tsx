@@ -1,25 +1,43 @@
-import { images } from "../../../hooks";
 import SubHeading from "../sectionSub/SubHeading";
 
 const FindUs = () => (
   <div className="app__bg app__wrapper section__padding" id="contact">
     <div className="app__wrapper_info">
-      <SubHeading title="Contact" />
+      <SubHeading title="Infos" />
       <h1 className="headtext__cormorant" style={{ marginBottom: "3rem" }}>
-        Find Us
+        Contact Us
       </h1>
       <div className="app__wrapper-content">
-        <p className="p__opensans">
-          Lane Ends Bungalow, Whatcroft Hall Lane, Rudheath, CW9 75G
+        <p
+          className="p__opensans"
+          style={{ color: "black", fontWeight: "600", fontSize: "20px" }}
+        >
+          Long to valley, near of the city Lorem ipsum, Dolar sit met.
         </p>
         <p
           className="p__cormorant"
           style={{ color: "#DCCA87", margin: "2rem 0" }}
         >
-          Opening Hours
+          Especial contact
         </p>
-        <p className="p__opensans">Mon - Fri: 10:00 am - 02:00 am</p>
-        <p className="p__opensans">Sat - Sun: 10:00 am - 03:00 am</p>
+        <p
+          className="p__opensans"
+          style={{ color: "black", fontWeight: "600", fontSize: "20px" }}
+        >
+          Email: johnrestaurant@thebest.com
+        </p>
+        <p
+          className="p__opensans"
+          style={{ color: "black", fontWeight: "600", fontSize: "20px" }}
+        >
+          instagram: @Johnrestaurant
+        </p>
+        <p
+          className="p__opensans"
+          style={{ color: "black", fontWeight: "600", fontSize: "20px" }}
+        >
+          Customer Feedback Channel: 288-444-1233
+        </p>
       </div>
       <button
         type="button"
@@ -31,7 +49,7 @@ const FindUs = () => (
     </div>
 
     <div className="app__wrapper_img">
-      <img src={images.findus} alt="finus_img" />
+      <img src="https://i.gifer.com/EMQW.gif" alt="finus_img" />
     </div>
   </div>
 );
