@@ -1,7 +1,7 @@
 .app__gallery {
   flex-direction: row;
 
-  background: var(--color-black);
+  background: var(--color-white);
   padding: 4rem 0 4rem 6rem;
 }
 
@@ -12,6 +12,7 @@
   align-items: flex-start;
   flex-direction: column;
   min-width: 500px;
+  padding-left: 2rem;
   padding-right: 2rem;
 }
 
@@ -44,16 +45,17 @@
   position: relative;
   min-width: 301px;
   height: 447px;
-  margin-right: 2rem;
+  border: 2px solid var(--color-crimson);
 }
 
 .gallery__image-icon {
   position: absolute;
-  color: #fff;
+  color: var(--color-crimson);
   font-size: 2rem;
   opacity: 0;
   transition: 0.5s ease;
   cursor: pointer;
+  font-family: var(--font-alt);
 }
 
 .app__gallery-images_card img {
@@ -77,22 +79,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 1rem;
   position: absolute;
   bottom: 5%;
 }
 
 .gallery__arrow-icon {
-  color: var(--color-golden);
+  color: var(--color-black);
   font-size: 2rem;
   cursor: pointer;
-  background: var(--color-black);
+  background: var(--color-white);
   border-radius: 5px;
 }
 
 .gallery__arrow-icon:hover {
-  color: var(--color-white);
+  color: var(--color-crimson);
 }
 
 @media screen and (min-width: 2000px) {
