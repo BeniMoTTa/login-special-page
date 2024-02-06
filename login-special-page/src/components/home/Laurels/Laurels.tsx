@@ -31,32 +31,34 @@ const Laurels = () => {
   const rating = 4.8;
   return (
     <div className="app__bg-chef app__wrapper section__padding" id="awards">
-      <div className="app__wrapper_info">
-        <h1 className="headtext__cormorant">Our Standings</h1>
+      <div>
+        <div className="app__wrapper_info">
+          <h1 className="headtext__cormorant">Our Standings</h1>
 
-        <div className="app__laurels_awards">
-          {data.awards.map((award) => (
-            <AwardCard awards={award} key={award.title} />
-          ))}
+          <div className="app__laurels_awards">
+            {data.awards.map((award) => (
+              <AwardCard awards={award} key={award.title} />
+            ))}
+          </div>
+        </div>
+
+        <div className="star__rating">
+          <div>
+            {[...Array(5)].map((_, index) => {
+              const { starCount, hasHalfStar } = getStarRating(rating);
+
+              if (index < starCount) {
+                return <FaStar key={index} size={60} color="#ffd700" />;
+              } else if (hasHalfStar && index === starCount) {
+                return <FaStar key={index} size={60} color="#ffd700" />;
+              } else {
+                return <FaStar key={index} size={60} color="#ccc" />;
+              }
+            })}
+          </div>
+          <p>{rating} in the last 6 months</p>
         </div>
       </div>
-      <div className="star__rating">
-        <div>
-          {[...Array(5)].map((_, index) => {
-            const { starCount, hasHalfStar } = getStarRating(rating);
-
-            if (index < starCount) {
-              return <FaStar key={index} size={60} color="#ffd700" />;
-            } else if (hasHalfStar && index === starCount) {
-              return <FaStar key={index} size={60} color="#ffd700" />;
-            } else {
-              return <FaStar key={index} size={60} color="#ccc" />;
-            }
-          })}
-        </div>
-        <p>{rating} in the last 6 months</p>
-      </div>
-
       <div className="app__wrapper_img">
         <img
           src="https://media-cdn.tripadvisor.com/media/photo-s/1c/95/4b/0d/photo.jpg"

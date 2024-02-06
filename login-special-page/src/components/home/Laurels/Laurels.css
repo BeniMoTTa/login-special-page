@@ -25,6 +25,7 @@
   font-size: 20px;
   color: var(--color-white);
 }
+
 @media screen and (min-width: 1900px) {
   .app__laurels_awards-card {
     min-width: 390px;

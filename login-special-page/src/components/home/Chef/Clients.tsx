@@ -2,7 +2,7 @@ import { images } from "../../../hooks";
 import "./Clients.css";
 
 const Clients = () => (
-  <div className="app__bg-chef  app__wrapper section__padding">
+  <div className="app__bg-chef  app__wrapper section__padding" id="clients">
     <div className="app__wrapper_info">
       <h1 className="headtext__cormorant">What they say about us</h1>
 

@@ -10,7 +10,7 @@ const FindUs = () => (
       <div className="app__wrapper-content">
         <p
           className="p__opensans"
-          style={{ color: "black", fontWeight: "600", fontSize: "20px" }}
+          style={{ color: "black", fontWeight: "600" }}
         >
           Long to valley, near of the city Lorem ipsum, Dolar sit met.
         </p>
@@ -22,19 +22,19 @@ const FindUs = () => (
         </p>
         <p
           className="p__opensans"
-          style={{ color: "black", fontWeight: "600", fontSize: "20px" }}
+          style={{ color: "black", fontWeight: "600" }}
         >
           Email: johnrestaurant@thebest.com
         </p>
         <p
           className="p__opensans"
-          style={{ color: "black", fontWeight: "600", fontSize: "20px" }}
+          style={{ color: "black", fontWeight: "600" }}
         >
           instagram: @Johnrestaurant
         </p>
         <p
           className="p__opensans"
-          style={{ color: "black", fontWeight: "600", fontSize: "20px" }}
+          style={{ color: "black", fontWeight: "600" }}
         >
           Customer Feedback Channel: 288-444-1233
         </p>

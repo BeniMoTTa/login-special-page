@@ -1,10 +1,11 @@
-import SubHeading from "../sectionSub/SubHeading";
 import "./Newsletter.css";
 
 const Newsletter = () => (
   <div className="app__newsletter">
     <div className="app__newsletter-heading">
-      <h1 className="headtext__cormorant">Subscribe To Our Newsletter</h1>
+      <h1 className="headtext__cormorant">
+        <span>Subscribe</span> To Our Newsletter
+      </h1>
       <p className="p__opensans">And never miss latest Updates!</p>
     </div>
     <div className="app__newsletter-input flex__center">

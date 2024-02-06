@@ -25,6 +25,9 @@ const Navbar = () => {
           <a href="#menu">Menu</a>
         </li>
         <li className="p__opensans">
+          <a href="#clients">Clients</a>
+        </li>
+        <li className="p__opensans">
           <a href="#awards">Awards</a>
         </li>
         <li className="p__opensans">
@@ -56,13 +59,18 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a href="#about" onClick={() => setToggleMenu(false)}>
-                  About
+                <a href="#schedule" onClick={() => setToggleMenu(false)}>
+                  Schedule
                 </a>
               </li>
               <li>
                 <a href="#menu" onClick={() => setToggleMenu(false)}>
                   Menu
+                </a>
+              </li>
+              <li>
+                <a href="#clients" onClick={() => setToggleMenu(false)}>
+                  Clients
                 </a>
               </li>
               <li>
