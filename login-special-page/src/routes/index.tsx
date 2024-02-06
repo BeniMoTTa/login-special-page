@@ -5,8 +5,8 @@ import Home from "../components/home/Home";
 const RoutesMain = () => {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<Home />} />
     </Routes>
   );
 };

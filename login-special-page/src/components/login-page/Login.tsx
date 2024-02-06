@@ -2,11 +2,23 @@ import { useState } from "react";
 import { SiGmail } from "react-icons/si";
 import { FaFacebook } from "react-icons/fa";
 import "./login.css";
+import { useAuth } from "../../hooks/useAuth";
+import { LoginData, loginSchema } from "../../validations/login";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import RegisterForm from "./register";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [isRegisterActive, setIsRegisterActive] = useState(false);
   const [isContainerActive, setIsContainerActive] = useState(false);
+
+  const { userLogin } = useAuth();
+
+  const { register, handleSubmit } = useForm<LoginData>({
+    resolver: zodResolver(loginSchema),
+    mode: "onChange",
+  });
 
   const handleToggleRegister = () => {
     setIsRegisterActive(!isRegisterActive);
@@ -15,17 +27,7 @@ const Login = () => {
   const handleToggleSignIn = () => {
     setIsContainerActive(!isContainerActive);
   };
-  const handleLogin = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
 
-    console.log("Login:", email);
-  };
-
-  const handleRegister = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-
-    console.log("Register:", email);
-  };
   return (
     <div className="general-container">
       <div
@@ -33,53 +35,10 @@ const Login = () => {
         id="container"
       >
         <div className="form-container sign-up">
-          <form onSubmit={handleRegister}>
-            <h1 className="title-basic">New Account</h1>
-            <div className="space-icon">
-              <div className="gmail-icon">
-                <span>
-                  <SiGmail />
-                </span>
-                <p>Connect with gmail</p>
-              </div>
-              <div className="facebook-icon">
-                <span>
-                  <FaFacebook />
-                </span>
-                <p>Connect with facebook</p>
-              </div>
-            </div>
-            <span>or registrate with your datas</span>
-            <div className="input-container">
-              <input
-                id="name"
-                type="text"
-                placeholder="type your name..."
-                pattern="[0-9]*"
-              />
-            </div>
-            <div className="input-container">
-              <input
-                id="email"
-                type="email"
-                placeholder="type your email..."
-                pattern="[0-9]*"
-              />
-            </div>
-            <div className="input-container">
-              <input
-                id="password"
-                type="password"
-                placeholder="type your password..."
-                pattern="[0-9]*"
-              />
-            </div>
-
-            <button>Sign Up</button>
-          </form>
+          <RegisterForm />
         </div>
         <div className="form-container sign-in">
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleSubmit(userLogin)}>
             <h1 className="title-basic">Sign In</h1>
             <div className="space-icon">
               <div className="gmail-icon">
@@ -103,8 +62,8 @@ const Login = () => {
                 value={email}
                 type="email"
                 placeholder="enter with your email.."
+                {...register("email")}
                 onChange={(e) => setEmail(e.target.value)}
-                pattern="[0-9]*"
               />
             </div>
 
@@ -113,7 +72,7 @@ const Login = () => {
                 id="password"
                 type="password"
                 placeholder="enter with your password..."
-                pattern="[0-9]*"
+                {...register("password")}
               />
             </div>
 
