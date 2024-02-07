@@ -5,8 +5,11 @@ import { MdOutlineRestaurantMenu } from "react-icons/md";
 
 import "./Navbar.css";
 
+import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="app__navbar">
@@ -34,9 +37,19 @@ const Navbar = () => {
         <li className="p__opensans">
           <a href="#contact">Contact</a>
         </li>
+        <li className="p__opensans">
+          <a
+            href=""
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Sign In
+          </a>
+        </li>
       </ul>
       <div className="app__navbar-login">
-        <a href="/home" className="p__opensans">
+        <a href="#" className="p__opensans">
           <IoRestaurant />
         </a>
       </div>
@@ -70,8 +83,13 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a href="#menu" onClick={() => setToggleMenu(false)}>
-                  Login
+                <a
+                  href=""
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  Sign In
                 </a>
               </li>
               <li>

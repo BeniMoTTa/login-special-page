@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { SiGmail } from "react-icons/si";
 import { FaFacebook } from "react-icons/fa";
-import "./login.css";
 import { useAuth } from "../../hooks/useAuth";
 import { LoginData, loginSchema } from "../../validations/login";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import RegisterForm from "./register";
+import { useNavigate } from "react-router-dom";
+import "./login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [isRegisterActive, setIsRegisterActive] = useState(false);
   const [isContainerActive, setIsContainerActive] = useState(false);
+
+  const navigate = useNavigate();
 
   const { userLogin } = useAuth();
 
@@ -82,6 +85,16 @@ const Login = () => {
             <button id="login" onClick={handleToggleSignIn}>
               Sign In
             </button>
+            <div>
+              {" "}
+              <button
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                Return to home!
+              </button>
+            </div>
           </form>
         </div>
         <div className="toggle-container">

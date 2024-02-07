@@ -23,12 +23,12 @@ const Footer = () => (
         <a href="https://www.linkedin.com/in/jozhue-beni/" target="_blank">
           Jozhué Beni
         </a>
-        <a href="https://www.linkedin.com/in/douglas-diniz-/" target="_blank">
+        {/* <a href="https://www.linkedin.com/in/douglas-diniz-/" target="_blank">
           Douglas Diniz
         </a>
         <a href="https://www.linkedin.com/in/camilagdtavares/" target="_blank">
           Camila Tavares
-        </a>
+        </a> */}
       </div>
     </div>
     <div className="footer__copyright">
