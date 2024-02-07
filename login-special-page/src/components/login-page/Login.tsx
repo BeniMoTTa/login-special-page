@@ -1,3 +1,4 @@
+import "./index.css";
 import { useState } from "react";
 import { SiGmail } from "react-icons/si";
 import { FaFacebook } from "react-icons/fa";
@@ -7,7 +8,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import RegisterForm from "./register";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
